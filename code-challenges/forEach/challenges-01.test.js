@@ -73,7 +73,10 @@ Write a function named removeWithForEach that produces the same output as challe
 
 const removeWithForEach = (arr, callback) => {
   // Solution code here...
-};
+  arr.forEach(element => callback(element,arr));
+  return arr;
+}
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -126,7 +129,20 @@ Return the resulting output array.
 
 const fizzbuzz = (arr) => {
   // Solution code here...
-};
+  const output =[];
+  arr.forEach((num) => {
+    if(num % 15 === 0){
+      output.push('Fizz Buzz');
+    }else if(num % 3 === 0){
+      output.push('Fizz');
+    }else if( num % 5 === 0){
+      output.push('Buzz');
+    }else{
+      output.push(num);
+    }
+  })
+  return output;
+}
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
