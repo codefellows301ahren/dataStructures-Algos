@@ -29,9 +29,11 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  let validator = /([A-Z])\w+/g;      ///[A-Z][a-z]*$(\s|\0)/g;
-  let stmt = str.match(validator);
-  return stmt;
+  let validator = /([A-Z])\w+/g;
+  if(str.match(validator)){
+    return str.match(validator);
+  }
+  return [];
   // Solution code here...
 };
 
@@ -42,8 +44,15 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  // Solution code here...
-};
+  let validator = /^[A-J]/g;
+  let newArr = [];
+  arr.forEach(element => {
+    if(element.match(validator)) {
+      newArr.push(element);
+    }
+  });
+  return newArr;
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -58,7 +67,9 @@ Do not use the vertical bar (pipe) in your pattern.
 ------------------------------------------------------------------------------------------------ */
 
 const matchMonth = (input) => {
-  // Solution code here...
+  let validator = /^(\bo?O?)(ct)(ober)?$/g;
+  let isTru = validator.test(input)
+  return isTru;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -72,8 +83,9 @@ The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "
 ------------------------------------------------------------------------------------------------ */
 
 const noPunctuation = str => {
-  // Solution code here...
-};
+  let validator = /\w+\s/g;
+  return str.match(validator)
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -88,6 +100,9 @@ For example, 'Welcome to Code 301!' will return 'W_lc_m_ t_ C_d_ 301!'.
 ------------------------------------------------------------------------------------------------ */
 
 let hangman = (str) => {
+  let validator = /[aeiou]/ig;
+  return str.replace(validator, '_');
+  
   // Solution code here...
 };
 
