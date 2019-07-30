@@ -71,13 +71,28 @@ const gruffaloCrumble = {
     'Bake for 12-15 hours',
   ]
 };
-
-
+// works in repl not sure why not working
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
+  recipe.ingredients.forEach(element => {
+
+    let newResult = element.indexOf(' ');
+    let newArr2 = element.indexOf(' ',newResult +1)+1;
+    result.push(element.slice(newArr2));
+
+  });
   return result;
 };
+
+
+
+// const listFoods = (recipe) => {
+//   let result = [];
+//   for(let i=0; i<recipe.ingredients.length;i++)
+//     result.push(recipe.ingredients[i].replace(/^([^ ]+ ){2}/, ''));
+//   return result;
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -89,7 +104,13 @@ You may also use other string or array methods.
 
 const splitFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  let temp = [];
+  for(let i=0; i<recipe.ingredients.length;i++){
+    temp = [];
+    temp =(recipe.ingredients[i].split(' '));
+    temp = (temp.slice(2));
+    result.push(temp.join(' '));
+  }
   return result;
 };
 
