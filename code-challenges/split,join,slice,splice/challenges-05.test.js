@@ -15,11 +15,8 @@ For example, if the input is 'Welcome', the output will be:
 
 const howMuchPencil = (str) => {
   let result = [str];
-  let temp = [str];
   for(let i=0; i<str.length; i++){
-    result.push(temp)
-    str.shift();
-  
+    result.push(result[i].substring(1))
   }
   return result;
 };
@@ -32,9 +29,7 @@ Write a function name wordsToCharList that, given a string as input, returns a n
 For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
-const wordsToCharList = (arr) => {
-  // Solution code here...
-};
+const wordsToCharList = (arr) => arr.split('');
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -76,13 +71,28 @@ const gruffaloCrumble = {
     'Bake for 12-15 hours',
   ]
 };
-
-
+// works in repl not sure why not working
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
+  recipe.ingredients.forEach(element => {
+
+    let newResult = element.indexOf(' ');
+    let newArr2 = element.indexOf(' ',newResult +1)+1;
+    result.push(element.slice(newArr2));
+
+  });
   return result;
 };
+
+
+
+// const listFoods = (recipe) => {
+//   let result = [];
+//   for(let i=0; i<recipe.ingredients.length;i++)
+//     result.push(recipe.ingredients[i].replace(/^([^ ]+ ){2}/, ''));
+//   return result;
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -94,7 +104,13 @@ You may also use other string or array methods.
 
 const splitFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  let temp = [];
+  for(let i=0; i<recipe.ingredients.length;i++){
+    temp = [];
+    temp =(recipe.ingredients[i].split(' '));
+    temp = (temp.slice(2));
+    result.push(temp.join(' '));
+  }
   return result;
 };
 
@@ -110,7 +126,13 @@ Return a new array containing just the verbs. For example, ['Mix until evenly di
 
 const stepActions = (recipe) => {
   let result = [];
-  // Solution code here...
+  let temp = [];
+  for(let i=0; i<recipe.steps.length;i++){
+    temp = [];
+    temp =(recipe.steps[i].split(' '));
+    console.log(temp)
+    result.push(temp.shift());
+  }
   return result;
 };
 
@@ -128,7 +150,13 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const removeEvenValues = (arr) => {
-  // Solution code here...
+  let newArr = [];
+  arr.forEach(int => {
+    if(int % 2 !== 0 )
+      newArr.push(int);
+  });
+  newArr = newArr.slice(0, arr.length-1);
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -148,6 +176,7 @@ removeLastCharacters('Gregor', 9) returns ''
 
 const removeLastCharacters = (str, numberOfCharacters) => {
   // Solution code here...
+ return str.slice(0,str.length-numberOfCharacters)
 };
 
 
