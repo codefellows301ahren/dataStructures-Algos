@@ -54,9 +54,10 @@ Read the MDN documentation on String.charCodeAt() if necessary.
 
 For example: charCode(['h','i']) returns [104, 105].
 ------------------------------------------------------------------------------------------------ */
-
 const charCode = (arr) => {
   // Solution code here...
+  let raised = arr.map(val => val.charCodeAt())
+  return raised
 };
 
 /* ------------------------------------------------------------------------------------------------
