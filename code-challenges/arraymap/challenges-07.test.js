@@ -41,8 +41,8 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 
 const mapTwoToThe = (arr) => {
   // Solution code here...
-  const raised = arr.map(forEach(el =>{ el.push(Math.pow(2,el))
-  })
+  let raised = arr.map(val => Math.pow(2, val))
+  return raised//)
 };
 // const blob = dailyWeather.map(day => new Forecast(day))
 /* ------------------------------------------------------------------------------------------------
