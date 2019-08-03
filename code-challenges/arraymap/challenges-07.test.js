@@ -71,7 +71,19 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 ------------------------------------------------------------------------------------------------ */
 
 const evenOdd = (arr) => {
-  // Solution code here...
+  let numKind=[];
+  arr.forEach(val =>{
+    if(Number.isInteger(val)){
+      if(val%2===0){
+        numKind.push('even');
+      }else if(val%2!==0){
+        numKind.push('odd');
+      }
+    }else{
+      numKind.push('N/A')
+    }
+  })
+  return(numKind)
 };
 
 /* ------------------------------------------------------------------------------------------------
