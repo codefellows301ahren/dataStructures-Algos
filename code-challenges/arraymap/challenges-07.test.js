@@ -44,7 +44,7 @@ const mapTwoToThe = (arr) => {
   let raised = arr.map(val => Math.pow(2, val))
   return raised//)
 };
-// const blob = dailyWeather.map(day => new Forecast(day))
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
@@ -97,6 +97,8 @@ Note: Because this function is expecting the array of abilities, it will be invo
 extractAbilities(snorlaxAbilities.abilities)
 ------------------------------------------------------------------------------------------------ */
 
+
+
 const snorlaxAbilities = {
   abilities: [
     {
@@ -129,7 +131,8 @@ const snorlaxAbilities = {
 };
 
 const extractAbilities = (arr) => {
-  // Solution code here...
+  let names = Object.values(arr).map(el => el.ability.name);
+  return(names)
 };
 
 /* ------------------------------------------------------------------------------------------------
