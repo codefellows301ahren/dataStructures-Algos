@@ -41,10 +41,10 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 
 const mapTwoToThe = (arr) => {
   // Solution code here...
-  const raised = arr.map(forEach(el =>{ el.push(Math.pow(2,el))
-  })
+  let raised = arr.map(val => Math.pow(2, val))
+  return raised//)
 };
-// const blob = dailyWeather.map(day => new Forecast(day))
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
@@ -54,9 +54,10 @@ Read the MDN documentation on String.charCodeAt() if necessary.
 
 For example: charCode(['h','i']) returns [104, 105].
 ------------------------------------------------------------------------------------------------ */
-
 const charCode = (arr) => {
   // Solution code here...
+  let raised = arr.map(val => val.charCodeAt())
+  return raised
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -70,7 +71,19 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 ------------------------------------------------------------------------------------------------ */
 
 const evenOdd = (arr) => {
-  // Solution code here...
+  let numKind=[];
+  arr.forEach(val =>{
+    if(Number.isInteger(val)){
+      if(val%2===0){
+        numKind.push('even');
+      }else if(val%2!==0){
+        numKind.push('odd');
+      }
+    }else{
+      numKind.push('N/A')
+    }
+  })
+  return(numKind)
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -83,6 +96,8 @@ Write a function named extractAbilities that, given the array of abilities, uses
 Note: Because this function is expecting the array of abilities, it will be invoked as:
 extractAbilities(snorlaxAbilities.abilities)
 ------------------------------------------------------------------------------------------------ */
+
+
 
 const snorlaxAbilities = {
   abilities: [
@@ -116,7 +131,8 @@ const snorlaxAbilities = {
 };
 
 const extractAbilities = (arr) => {
-  // Solution code here...
+  let names = Object.values(arr).map(el => el.ability.name);
+  return(names)
 };
 
 /* ------------------------------------------------------------------------------------------------
