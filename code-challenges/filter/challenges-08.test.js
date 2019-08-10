@@ -22,7 +22,8 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 
 
 const filterStringsWithVowels = (arr) => {
-  // Solution code here...
+  let e = arr.filter(str => (/\w*([aeiouAEIOU])\w*/g.test(str)))
+  return e;
 };
 
 
@@ -34,9 +35,11 @@ Write a function named notInFirstArray that, given two arrays as input, uses fil
 For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
-const notInFirstArray = (forbiddenValues, arr) => {
-  // Solution code here...
-};
+const notInFirstArray = (forbiddenValues, arr) => arr.filter( (item) => {
+  return !forbiddenValues.includes(item);
+})
+// Solution code here...
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -155,7 +158,7 @@ For example: evenOddNumericValues(['Gregor', 2, 4, 1]) returns ['even', 'even', 
 ------------------------------------------------------------------------------------------------ */
 
 const evenOddNumericValues = (arr) => {
-  // Solution code here...
+  return arr.filter(element => typeof element === 'number').map(element => element % 2 === 0 ? 'even':'odd');
 };
 
 /* ------------------------------------------------------------------------------------------------
