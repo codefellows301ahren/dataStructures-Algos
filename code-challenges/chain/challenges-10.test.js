@@ -14,12 +14,12 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 const count = (target, input) => {
   // Solution code here...
   let total = 0;
-  for(let i=0; i<input.length-1; i++){
+  for(let i=0; i<input.length; i++){
     let counter = input[i].reduce((acc, val)=>{
       if(val === target){acc++}
       return acc;
     }, 0)
-    total += counter;
+    counter>0? total+=counter : console.log('no match');
   }
   return total;
 };
