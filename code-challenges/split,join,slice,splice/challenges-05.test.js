@@ -150,14 +150,11 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const removeEvenValues = (arr) => {
-  let newArr = [];
-  arr.forEach(int => {
-    if(int % 2 !== 0 )
-      newArr.push(int);
-  });
-  newArr = newArr.slice(0, arr.length-1);
-  return newArr;
+  // Solution code here...
+  
 };
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7

@@ -170,7 +170,11 @@ const isPrime = (value) => {
 };
 
 const countPrimeNumbers = (arr) => {
-  // Solution code here...
+  arr.reduce((acc,value) => {
+    if(isPrime(value)){
+      acc++;
+    }return acc
+  })
 };
 
 /* ------------------------------------------------------------------------------------------------
