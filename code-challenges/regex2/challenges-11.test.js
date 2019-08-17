@@ -32,6 +32,8 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 
 const validateEmail = (email) => {
   // Solution code here...
+  let regex =/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/gmi;
+  return regex.test(email);
 };
 
 /* ------------------------------------------------------------------------------------------------
