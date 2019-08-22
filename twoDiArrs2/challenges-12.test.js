@@ -29,7 +29,6 @@ const grandTotal = (stores) => {
     stores.reduce((acc,val)=>{
       acc+=val[idx];
       holder = acc
-      console.log(acc ,'acc')
       return acc
     },0)
     newArr.push(holder)
@@ -72,8 +71,9 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-  // Solution code here...
-};
+  return arr[2].items[1].quantity
+}
+  
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
