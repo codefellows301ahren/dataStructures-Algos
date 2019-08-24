@@ -9,7 +9,7 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 
 ------------------------------------------------------------------------------------------------ */
 
 const firstLetters = (arr) => {let llama = arr.map(str=> str.charAt(0))
-return llama
+  return llama
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -21,9 +21,8 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 ------------------------------------------------------------------------------------------------ */
 
 const findHappiness = (arr) => {
-  // Solution code here...
+  return arr.filter(ele => ele.includes(':)'))
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
@@ -32,9 +31,9 @@ Write a function named standardizePhoneNumbers that takes in an array of phone n
 For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
 
-const standardizePhoneNumbers = (arr) => {
-  // Solution code here...
-};
+const standardizePhoneNumbers = ((arr) =>{
+  return arr.map(num =>num.substring(1,4)+num.substring(6,9)+num.substring(10))
+})
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -46,6 +45,7 @@ For example, 'abcdefg' returns 'bdf'
 
 const onlyOddChars = (str) => {
   // Solution code here...
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
