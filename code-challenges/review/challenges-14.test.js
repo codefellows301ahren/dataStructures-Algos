@@ -84,7 +84,10 @@ let starWarsData = [{
 }];
 
 let biggerThanLuke = (arr) => {
-  // Solution code here...
+  let names=[];
+  arr.forEach(obj=> parseInt(obj.mass) > parseInt(arr[0].mass) ? names.push(obj.name) : null)
+  names = names.join(' - ');
+  return names
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -101,11 +104,11 @@ Here is an example of the input:
 This data could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
 
-const sortBy = (property, arr) => {
-  // Solution code here...
-};
+const sortBy = (property, arr )=>{
+  return arr.sort((a,b)=> parseInt(a.property) > parseInt(b.property))
+}
 
-/* ------------------------------------------------------------------------------------------------
+/* -----------------------------------------------------------------------------------------------
 CHALLENGE 4
 
 Write a function that determines if a given URL is secure, beginning with https://
@@ -118,7 +121,8 @@ https://secure.com returns true because the URL is secure
 https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
-// Solution code here...
+  const regex = /^(https:\/\/)/g;
+  return regex.test(url)
 };
 
 /* ------------------------------------------------------------------------------------------------
