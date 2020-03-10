@@ -30,13 +30,13 @@ Return the modified array.
 
 const addValues = (arr, value) => arr.push(value);
 
-const addNumbers = (num, arr, times, callback) => {
+const addNumbers = (num, arr, times) => {
   // Solution code here...
   for(let i = 0; i < times; i++){
-    callback(arr,num)
+    addValues(arr,num)
   }
   return arr
-};
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -55,7 +55,7 @@ const removeOne = (num, arr) => {
   if(num % 3 === 2){
     arr.pop();
   }
-};
+}
 
 const removeElements = (arr, callback) => {
   // Solution code here...
@@ -63,7 +63,7 @@ const removeElements = (arr, callback) => {
     callback(arr[i],arr);
   }
   return arr;
-};
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -88,10 +88,14 @@ This function should use forEach again, but rather than taking in a callback as 
 This anonymous function should accept up to three arguments: the element, the index, and the array.
 ------------------------------------------------------------------------------------------------ */
 
-// const removeWithAnon = (arr) => {
-//   // Solution code here...
-//   function (element, index, array) {
-// };
+const removeWithAnon = (arr) => {
+  arr.forEach(function (element, index, array) {
+    if(element %3 === 2){
+      array.pop(index)
+    }
+  })
+  return arr
+};
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -112,8 +116,15 @@ This function should use forEach to populate your grocery list based on the stor
 ------------------------------------------------------------------------------------------------ */
 
 const createList = (availableItems) => {
-  // Solution code here...
-};
+  // Solution code here..
+  let intventory = [];
+  availableItems.forEach(element => {
+    if(element.available === true){
+      intventory.push(element.name);
+    }
+  })
+  return intventory;
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7
